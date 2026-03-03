@@ -1,21 +1,65 @@
-# ADHD Support Chatbot
+# ADHD Support Chatbot (ELIZA-Style)
 
-A simple command-line chatbot that provides supportive, non-clinical guidance for parents/guardians with questions about 
-ADHD medications and management. It uses pattern matching, pronoun reflection, and randomized response templates, plus 
-basic safety checks for urgent situations.
+A command-line chatbot built in Python that provides supportive, non-clinical guidance for parents and guardians with questions about ADHD medications and day-to-day management.
 
-# Features
-- Eliza-style pattern matching with topic-specific prompts
-- Pronoun/perspective reflection for more natural responses
-- Safety keyword detection with urgent-care guidance
-- Occasional disclaimer reminders
+This project uses classic ELIZA-style pattern matching with topic-aware prompts, pronoun reflection, and safety-focused messaging.
 
-# Requirements
-- Python 3.10+ 
+## Why This Project
 
-# Run
+This demonstrates practical NLP fundamentals without external frameworks:
+- Regex-driven intent matching
+- Rule-based dialogue design
+- Pronoun/perspective reflection
+- Safety-first response handling
+- Randomized template responses for more natural conversation
+
+## Features
+
+- Topic-based response rules for ADHD diagnosis, medications, side effects, school support, and routines
+- Pronoun reflection to make responses feel conversational
+- Emergency keyword detection with urgent-care guidance
+- Periodic non-clinical disclaimer reminders
+- Clean command-line chat loop with exit commands
+
+## Safety Scope
+
+This chatbot is informational and supportive only.
+- It does not provide diagnosis or treatment decisions
+- It does not replace a licensed clinician
+- In urgent or dangerous situations, it directs users to emergency resources
+
+## Tech Stack
+
+- Python 3.10+
+- Standard library only (`re`, `random`, `string`)
+
+## Run Locally
+
 ```bash
 python main.py
 ```
 
-Type `quit`, `exit`, or `bye` to end the session.
+Type `quit`, `exit`, or `bye` to end the chat.
+
+## Example Interaction
+
+```text
+You: My child isn't eating lunch after taking medication.
+Bot: That sounds stressful. When did you first notice those effects, and do they line up with when the medication is active?
+```
+
+## Project Structure
+
+- `main.py`: Chatbot logic, safety checks, rules, and chat loop
+- `README.md`: Project overview and usage instructions
+
+## Improvement Ideas
+
+- Add unit tests for `normalize`, `reflect`, and `respond`
+- Move rules to a data file for easier maintenance
+- Add structured conversation logging for analysis
+- Expand safety patterns and localization
+
+## Author
+
+Bradley Mendel
